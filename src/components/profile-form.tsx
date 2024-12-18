@@ -39,27 +39,33 @@ export function ProfileForm({ user }: ProfileFormProps) {
   return (
     <form onSubmit={onSubmit} className="space-y-4">
       <div className="space-y-2">
-        <Label htmlFor="name">Name</Label>
+        <Label htmlFor="name">Display Name</Label>
         <Input
           id="name"
           name="name"
           defaultValue={user.name || ""}
           required
           placeholder="Enter your name"
+          className="max-w-md"
         />
       </div>
       <div className="space-y-2">
-        <Label htmlFor="email">Email</Label>
+        <Label htmlFor="email">Email Address</Label>
         <Input
           id="email"
           defaultValue={user.email || ""}
           disabled
-          className="bg-muted"
+          className="max-w-md bg-muted"
         />
+        <p className="text-sm text-muted-foreground">
+          Email cannot be changed
+        </p>
       </div>
-      <Button type="submit" className="w-full" disabled={isPending}>
-        {isPending ? "Updating..." : "Update Profile"}
-      </Button>
+      <div className="flex justify-start pt-2">
+        <Button type="submit" disabled={isPending}>
+          {isPending ? "Updating..." : "Update Profile"}
+        </Button>
+      </div>
     </form>
   )
 }

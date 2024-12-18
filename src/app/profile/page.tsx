@@ -19,10 +19,9 @@ export default async function ProfilePage() {
   }
 
   return (
-    <>
-      <Toaster />
-      <div className="container max-w-2xl py-8">
-        <div className="flex flex-col space-y-8">
+    <div className="flex-1">
+      <div className="container px-4 md:px-6 py-8">
+        <div className="flex flex-col gap-8">
           <div>
             <h1 className="text-3xl font-bold">Profile Settings</h1>
             <p className="text-muted-foreground">
@@ -30,31 +29,34 @@ export default async function ProfilePage() {
             </p>
           </div>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Profile Information</CardTitle>
-              <CardDescription>
-                Update your profile details
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <ProfileForm user={session.user} />
-            </CardContent>
-          </Card>
+          <div className="grid gap-6 max-w-3xl">
+            <Card>
+              <CardHeader>
+                <CardTitle>Profile Information</CardTitle>
+                <CardDescription>
+                  Update your profile details
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <ProfileForm user={session.user} />
+              </CardContent>
+            </Card>
 
-          <Card>
-            <CardHeader>
-              <CardTitle>Change Password</CardTitle>
-              <CardDescription>
-                Update your password to keep your account secure
-              </CardDescription>
-            </CardHeader>
-            <CardContent>
-              <PasswordForm />
-            </CardContent>
-          </Card>
+            <Card>
+              <CardHeader>
+                <CardTitle>Change Password</CardTitle>
+                <CardDescription>
+                  Update your password to keep your account secure
+                </CardDescription>
+              </CardHeader>
+              <CardContent>
+                <PasswordForm />
+              </CardContent>
+            </Card>
+          </div>
         </div>
       </div>
-    </>
+      <Toaster />
+    </div>
   )
 }

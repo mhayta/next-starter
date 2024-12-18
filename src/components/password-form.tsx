@@ -37,6 +37,7 @@ export function PasswordForm() {
           type="password"
           required
           placeholder="Enter your current password"
+          className="max-w-md"
         />
       </div>
       <div className="space-y-2">
@@ -47,6 +48,7 @@ export function PasswordForm() {
           type="password"
           required
           placeholder="Enter your new password"
+          className="max-w-md"
         />
       </div>
       <div className="space-y-2">
@@ -57,11 +59,14 @@ export function PasswordForm() {
           type="password"
           required
           placeholder="Confirm your new password"
+          className="max-w-md"
         />
       </div>
-      <Button type="submit" className="w-full" disabled={isPending}>
-        {isPending ? "Updating..." : "Update Password"}
-      </Button>
+      <div className="flex justify-start pt-2">
+        <Button type="submit" disabled={isPending}>
+          {isPending ? "Updating..." : "Update Password"}
+        </Button>
+      </div>
     </form>
   )
 }
