@@ -8,6 +8,7 @@ import {
   SheetTrigger,
   SheetHeader,
   SheetTitle,
+  SheetDescription,
 } from "@/components/ui/sheet"
 import { Menu } from "lucide-react"
 import Link from "next/link"
@@ -61,6 +62,9 @@ export function MobileNav({ session }: MobileNavProps) {
               <span className="font-bold">Next Starter</span>
             </Link>
           </SheetTitle>
+          <SheetDescription className="sr-only">
+            Navigation menu for mobile devices
+          </SheetDescription>
         </SheetHeader>
         <Separator className="my-4" />
         <nav className="flex flex-col gap-2 px-2">
